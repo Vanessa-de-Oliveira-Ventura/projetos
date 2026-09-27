@@ -5,7 +5,7 @@ bom = 0
 ruim = 0
 
 # Pesquisa com 50 entrevistados
-for i in range(50):
+for i in range(10):
     print("\n--- Entrevistado", i + 1, "---")
 
     nome = input("Digite o nome: ")
