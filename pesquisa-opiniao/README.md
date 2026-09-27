@@ -70,6 +70,6 @@ Quantidade de respostas RUIM: 10
 
 ## 👨‍💻 Autor
 
-**Gustavo de Oliveira Ventura Lemos**
+**Vanessa de Oliveira Ventura**
 
 Projeto desenvolvido para prática de programação em Python.
