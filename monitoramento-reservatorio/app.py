@@ -1,6 +1,4 @@
-from colorama import Fore, Style, init
-
-init()
+import colorama
 
 niveis = [
     "Nível 1 - Muito baixo (crítico)",
@@ -13,65 +11,49 @@ niveis = [
 
 def definir_cor(nivel):
     if nivel == 1:
-        return Fore.RED
+        return colorama.Fore.RED
     elif nivel == 2:
-        return Fore.YELLOW
+        return colorama.Fore.YELLOW
     elif nivel == 3:
-        return Fore.GREEN
+        return colorama.Fore.GREEN
     elif nivel == 4:
-        return Fore.CYAN
+        return colorama.Fore.CYAN
     elif nivel == 5:
-        return Fore.BLUE
-    else:
-        return Fore.WHITE
+        return colorama.Fore.BLUE
 
 
-def exibir_nivel(nivel):
+def exibir_nivel(nivel, porcentagem):
     cor = definir_cor(nivel)
     mensagem = niveis[nivel - 1]
 
-    print(cor + mensagem + Style.RESET_ALL)
+    print(cor + mensagem + colorama.Style.RESET_ALL)
+    print(f"Reservatório: {porcentagem}%")
 
 
 print("=== MONITORAMENTO DO RESERVATÓRIO ===")
 
-for nivel in range(1, 6):
-    exibir_nivel(nivel)from colorama import Fore, Style, init
+while True:
+    porcentagem = int(input("\nDigite a porcentagem de água no reservatório (0 a 100): "))
 
-init()
+    if porcentagem < 0 or porcentagem > 100:
+        print("Porcentagem inválida!")
+        continue
 
-niveis = [
-    "Nível 1 - Muito baixo (crítico)",
-    "Nível 2 - Baixo",
-    "Nível 3 - Médio",
-    "Nível 4 - Alto",
-    "Nível 5 - Muito alto (alerta)"
-]
-
-
-def definir_cor(nivel):
-    if nivel == 1:
-        return Fore.RED
-    elif nivel == 2:
-        return Fore.YELLOW
-    elif nivel == 3:
-        return Fore.GREEN
-    elif nivel == 4:
-        return Fore.CYAN
-    elif nivel == 5:
-        return Fore.BLUE
+    if porcentagem <= 20:
+        nivel = 1
+    elif porcentagem <= 40:
+        nivel = 2
+    elif porcentagem <= 60:
+        nivel = 3
+    elif porcentagem <= 80:
+        nivel = 4
     else:
-        return Fore.WHITE
+        nivel = 5
 
+    exibir_nivel(nivel, porcentagem)
 
-def exibir_nivel(nivel):
-    cor = definir_cor(nivel)
-    mensagem = niveis[nivel - 1]
+    continuar = input("\nDeseja verificar novamente? (s/n): ")
 
-    print(cor + mensagem + Style.RESET_ALL)
-
-
-print("=== MONITORAMENTO DO RESERVATÓRIO ===")
-
-for nivel in range(1, 6):
-    exibir_nivel(nivel)
+    if continuar.lower() != "s":
+        print("Programa encerrado.")
+        break
