@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(204, 175, 252);
+}
+img{
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+}
+a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: all 0.5s;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul li h1{
+    font-size: 25px;
+    margin: auto;
+    height: 30px;
+}
+ul li a{
+    font-size: 20px;
+    margin: auto;
+}
+#youtube_titulo{
+    margin-bottom: 10px;
+}
+ul li a:hover{
+    color: rgb(197, 55, 202);
+    transition: all 0.5s;
+}
